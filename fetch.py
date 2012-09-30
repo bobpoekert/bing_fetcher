@@ -25,7 +25,6 @@ def get_urls(q, tree, on_error=traceback.print_exc):
             yield (href, cache)
         except:
             on_error()
-    return res
 
 def get_next(tree):
     "get 'next page' link from an lxml-parsed results page"
@@ -57,7 +56,7 @@ def search(q, retries=3):
                 fail = True
                 continue
             break
-        for e in get_urls(q, tree)):
+        for e in get_urls(q, tree):
             yield e
 
 def get_cache(url):
